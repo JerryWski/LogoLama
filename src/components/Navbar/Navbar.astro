@@ -6,13 +6,13 @@ import { Icon } from "astro-icon/components";
 ---
 
 <header>
-    <!-- <div class="nav-contacts">
-        <a href="">phone</a>
-        <a href="">e-mail</a>
-    </div> -->
+    <div class="nav-contacts">
+        <a href='tel:+48668278485'> <Icon name='phone' width={20} height={20}/><span>+48 668 278 485</span></a>
+        <a href='mailto:paulina.kopaczewska91@wp.pl'><Icon name='mail' width={20} height={20}/> <span>paulina.kopaczewska91@wp.pl</span></a>
+    </div>
     <nav class="nav-container">
         <a class="logo" href="/">
-          <Icon class="nav-logo-sm" name="logo-test2" width={70} height={70}/>
+          <Icon class="nav-logo-sm" name="logo-test2" width={90} height={90}/>
             <!-- <Image class="nav-logo-sm" src={logo} alt='logo with lama face' width={70}/> -->
         </a>
         <ul aria-label='primary nav' class="nav-desktop">
@@ -34,6 +34,9 @@ import { Icon } from "astro-icon/components";
 </header>
 
 <style>
+  header {
+    background-color: var(--rose-bg);
+  }
   .backdrop {
     position: fixed;
     top: 0;
@@ -53,13 +56,34 @@ import { Icon } from "astro-icon/components";
     opacity: 1;
     visibility: visible;
   }
-  .nav-desktop, .nav-lit-contact, .nav-contacts {
+  .nav-desktop, .nav-lit-contact{
     display: none;
+  }
+  .nav-contacts {
+    padding: 15px 0px;
+    background-color: var(--rose-bg);
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-bottom: 1px solid #f4e5e5;
+  }
+  .nav-contacts a {
+    display: flex;
+    font-family: var(--mulish-font);
+    color: var(--text-blue);
+    align-items: center;
+    gap: 3px;
+  }
+  .nav-contacts > a:nth-child(1) > span:nth-child(2), .nav-contacts > a:nth-child(2) > span:nth-child(2) {
+    font-size: .7rem;
   }
   .nav-container {
     background-color: var(--rose-bg);
     display: flex;
-    position: fixed;
+    position: relative;
     color: var(--text-blue);
     top: 0;
     width: 100%;
@@ -69,9 +93,9 @@ import { Icon } from "astro-icon/components";
     align-items: center;
     z-index: 1000;
     font-family: var(--baloo-font);
-    
   }
   .nav-container.sticking {
+    position: fixed;
     background-color: white;
     box-shadow: 0px 5px 12px 1px rgba(242, 238, 238, 1);
   }
@@ -104,6 +128,7 @@ import { Icon } from "astro-icon/components";
   .nav-logo-sm {
     display: block;
   }
+  
 @media(min-width:900px) {
   .nav-desktop {
     display: flex;
@@ -116,16 +141,17 @@ import { Icon } from "astro-icon/components";
     flex-direction: column;
   }
   .nav-contacts {
-    position: absolute;
-    display: block;
-    z-index: 1001;
-    width: 100%;
-    padding-block: 30px;
-    background-color: red;
+    padding-block: 20px;
+    gap: 50px;
   }
-  .nav-container {
+  .nav-contacts > a:nth-child(1) > span:nth-child(2), .nav-contacts > a:nth-child(2) > span:nth-child(2)   {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 380px) {
+  .nav-contacts > a:nth-child(1) > span:nth-child(2), .nav-contacts > a:nth-child(2) > span:nth-child(2)  {
     
-    
+    font-size: 0.5rem;
   }
 }
 </style>
@@ -136,27 +162,25 @@ import { Icon } from "astro-icon/components";
     const backdrop = document.querySelector('.backdrop');
     const navContainer = document.querySelector('.nav-container');
 
-     
     const sentinel = document.createElement('div');
     document.body.insertBefore(sentinel, document.body.firstChild);
 
-  
     Object.assign(sentinel.style, {
     position: 'absolute',
-    top: '100px',
+    top: '48px',
     left: '0',
     width: '100%',
-    height: '1px',
+    height: '0px',
     pointerEvents: 'none',
   });
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      navContainer!.classList.toggle('sticking', !entry.isIntersecting);
-    });
-  }, { threshold: 0.1 });
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        navContainer!.classList.toggle('sticking', !entry.isIntersecting);
+      });
+    }, { threshold: 0.1 });
 
-  observer.observe(sentinel);
+    observer.observe(sentinel);
    
     const toggleHamburger = () => {
       hamburgerBtn!.classList.toggle('is-active');
