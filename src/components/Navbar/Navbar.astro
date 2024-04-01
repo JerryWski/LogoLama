@@ -7,8 +7,11 @@ import { Icon } from "astro-icon/components";
 
 <header>
     <div class="nav-contacts">
-        <a href='tel:+48668278485'> <Icon name='phone' width={20} height={20}/><span>+48 668 278 485</span></a>
-        <a href='mailto:paulina.kopaczewska91@wp.pl'><Icon name='mail' width={20} height={20}/> <span>paulina.kopaczewska91@wp.pl</span></a>
+        <p class="profession"><span>Logopeda </span>Paulina Kopaczewska Rudaś</p>
+        <div>
+          <a href='tel:+48668278485'> <Icon name='phone' width={20} height={20}/><span>+48 668 278 485</span></a>
+          <a href='mailto:paulina.kopaczewska91@wp.pl'><Icon name='mail' width={20} height={20}/> <span>paulina.kopaczewska91@wp.pl</span></a>
+        </div>
     </div>
     <nav class="nav-container">
         <a class="logo" href="/">
@@ -45,7 +48,7 @@ import { Icon } from "astro-icon/components";
     background-color: rgb(0, 0, 0, 0.7);
     width: 100%;
     height: 100%;
-    z-index: 999;
+    z-index: 99;
     opacity: 0;
     visibility: hidden;
     transition:
@@ -62,23 +65,33 @@ import { Icon } from "astro-icon/components";
   .nav-contacts {
     padding: 15px 0px;
     background-color: var(--rose-bg);
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
+    position: sticky;
+    z-index: 1000;
     border-bottom: 1px solid #f4e5e5;
   }
-  .nav-contacts a {
+  .profession {
+    display: none;
+  }
+  .nav-contacts div {
+    display: flex;
+    gap: 20px;
+  }
+  .nav-contacts > div:nth-child(2) > a:nth-child(1), .nav-contacts > div:nth-child(2) > a:nth-child(2) {
+    /* font-size: .7rem; */
+    font-size: clamp(.8rem, 1vw,1rem);
+  }
+  .nav-contacts div a {
     display: flex;
     font-family: var(--mulish-font);
     color: var(--text-blue);
     align-items: center;
     gap: 3px;
-  }
-  .nav-contacts > a:nth-child(1) > span:nth-child(2), .nav-contacts > a:nth-child(2) > span:nth-child(2) {
-    font-size: .7rem;
   }
   .nav-container {
     background-color: var(--rose-bg);
@@ -104,7 +117,7 @@ import { Icon } from "astro-icon/components";
   }
   .nav-mobile {
     position: absolute;
-    top: 89px;
+    top: 109px;
     left: 0;
     width: 100%;
     height: 50vh;
@@ -119,6 +132,12 @@ import { Icon } from "astro-icon/components";
     transform: translateY(-150%);
     transition: transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
   }
+  .nav-mobile-link {
+    font-family: var(--baloo-font);
+    color: var(--text-blue);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
   .active {
     transform: translateY(0);
   }
@@ -132,6 +151,15 @@ import { Icon } from "astro-icon/components";
 @media(min-width:900px) {
   .nav-desktop {
     display: flex;
+    gap: 60px;
+  }
+  .nav-desktop li a{
+    font-family: var(--baloo-font);
+    color: var(--text-blue);
+    font-weight: 700;
+    min-width: 70px;
+    display: inline-block;
+    font-size: clamp(1rem, 1.2vw, 1.5rem);
   }
   header {
     display: flex;
@@ -140,17 +168,50 @@ import { Icon } from "astro-icon/components";
     position: relative;
     flex-direction: column;
   }
+  .nav-container {
+    padding-block: 0;
+    padding-inline: 200px;
+    justify-content: space-around;
+    gap: 100px;
+  }
   .nav-contacts {
     padding-block: 20px;
     gap: 50px;
+    justify-content: space-between;
+    width: 87%;
   }
-  .nav-contacts > a:nth-child(1) > span:nth-child(2), .nav-contacts > a:nth-child(2) > span:nth-child(2)   {
-    font-size: 1rem;
+  .profession {
+    display: inline-block;
+    font-family: var(--mulish-font);
+    color: var(--text-blue);
+  }
+  .profession span {
+    color: var(--rose-main);
+  }
+ 
+  .nav-lit-contact {
+    display: block;
+  }
+  .nav-lit-contact a {
+    color: var(--wh);
+    padding: 10px 20px;
+    border-radius: 6px;
+    background-color: var(--text-blue2);
+    font-weight: 700;
+    font-size: clamp(1rem, 1.2vw, 1.5rem);
+    transition: background-color .3s ;
+    box-shadow: inset 0px -4px 0px 0px rgb(0 0 0 / 10%);
+  }
+  .nav-lit-contact a:hover {
+    background-color: var(--text-blue);
+  }
+  .nav-logo-sm {
+    width: 120px;
+    height: 120px;
   }
 }
 @media (max-width: 380px) {
-  .nav-contacts > a:nth-child(1) > span:nth-child(2), .nav-contacts > a:nth-child(2) > span:nth-child(2)  {
-    
+  .nav-contacts > div:nth-child(2) > a:nth-child(1), .nav-contacts > div:nth-child(2) > a:nth-child(2){
     font-size: 0.5rem;
   }
 }
