@@ -2,16 +2,18 @@
 import { Image } from "astro:assets";
 import logo from '../../assets/logo-test.webp'
 import HamburgerBtn from './HamburgerBtn.astro';
+import { Icon } from "astro-icon/components";
 ---
 
 <header>
+    <!-- <div class="nav-contacts">
+        <a href="">phone</a>
+        <a href="">e-mail</a>
+    </div> -->
     <nav class="nav-container">
-        <div class="nav-contacts">
-            <a href="">phone</a>
-            <a href="">e-mail</a>
-        </div>
-        <a href="/">
-            <Image class="nav-logo-sm" src={logo} alt='logo with lama face' width={70}/>
+        <a class="logo" href="/">
+          <Icon class="nav-logo-sm" name="logo-test2" width={70} height={70}/>
+            <!-- <Image class="nav-logo-sm" src={logo} alt='logo with lama face' width={70}/> -->
         </a>
         <ul aria-label='primary nav' class="nav-desktop">
             <li><a href="">O mnie</a></li>
@@ -23,16 +25,15 @@ import HamburgerBtn from './HamburgerBtn.astro';
         </div>
         <HamburgerBtn />
         <ul aria-label='primary nav' class="nav-mobile">
-            <li><a class="nav-mobile-link" href="">O mnie</a></li>
-            <li><a class="nav-mobile-link" href="">Usługi</a></li>
-            <li><a class="nav-mobile-link" href="">Kontakt</a></li>
+            <li><a class="nav-mobile-link" href="/">O mnie</a></li>
+            <li><a class="nav-mobile-link" href="/">Usługi</a></li>
+            <li><a class="nav-mobile-link" href="/">Kontakt</a></li>
         </ul>
     </nav>
     <div class='backdrop'></div>
 </header>
 
 <style>
-  
   .backdrop {
     position: fixed;
     top: 0;
@@ -59,6 +60,7 @@ import HamburgerBtn from './HamburgerBtn.astro';
     background-color: var(--rose-bg);
     display: flex;
     position: fixed;
+    color: var(--text-blue);
     top: 0;
     width: 100%;
     padding: 10px;
@@ -66,66 +68,64 @@ import HamburgerBtn from './HamburgerBtn.astro';
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
+    font-family: var(--baloo-font);
+    
   }
   .nav-container.sticking {
     background-color: white;
     box-shadow: 0px 5px 12px 1px rgba(242, 238, 238, 1);
-}
+  }
+  .nav-desktop li, .nav-mobile li {
+    list-style: none;
+  }
   .nav-mobile {
     position: absolute;
-    padding-top: 80px;
-    top: 77px;
+    top: 89px;
     left: 0;
-    width: 65%;
-    height: 100vh;
+    width: 100%;
+    height: 50vh;
     display: flex;
-    background: yellow;
+    background-color: var(--wh);
     justify-content: center;
     align-items: center;
     font-family: var(--main-font);
     gap: 40px;
     flex-direction: column;
     z-index: 19;
-    transform: translateX(-150%);
+    transform: translateY(-150%);
     transition: transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
   }
   .active {
-    transform: translateX(0);
+    transform: translateY(0);
+  }
+  .logo {
+    margin-left: 15px;
   }
   .nav-logo-sm {
     display: block;
   }
-  /* .hamburger {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    gap: 7px;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 100;
-  }
-  .burger-line {
-    background-color: red;
-  }
-  .burger-line:nth-child(1) {
-    width: 34px;
-    height: 2px;
-    display: block;
-  }
-  .burger-line:nth-child(2) {
-    width: 32px;
-    height: 2px;
-    display: block;
-  }
-  .burger-line:nth-child(3) {
-    width: 30px;
-    height: 2px;
-    display: block;
-  } */
 @media(min-width:900px) {
   .nav-desktop {
     display: flex;
+  }
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+  }
+  .nav-contacts {
+    position: absolute;
+    display: block;
+    z-index: 1001;
+    width: 100%;
+    padding-block: 30px;
+    background-color: red;
+  }
+  .nav-container {
+    
+    
   }
 }
 </style>
