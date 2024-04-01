@@ -1,7 +1,6 @@
 ---
 import Navbar from '../components/Navbar/Navbar.astro';
 
-
 interface Props {
   title: string;
 }
@@ -34,9 +33,13 @@ const {
     padding: 0;
     box-sizing: border-box;
   }
+  :root {
+    /* colors */
+    --rose-bg: hsl(16, 73%, 97%);
+  }
   html {
     scroll-padding-top: 0px;
-    min-height: 100vh;
+    min-height: 200vh;
     scroll-behavior: smooth;
   }
   a {
@@ -46,3 +49,7 @@ const {
     overflow: hidden;
   }
 </style>
+
+<script type="module">
+  
+</script>

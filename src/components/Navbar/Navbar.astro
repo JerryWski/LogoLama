@@ -11,7 +11,7 @@ import HamburgerBtn from './HamburgerBtn.astro';
             <a href="">e-mail</a>
         </div>
         <a href="/">
-            <Image src={logo} alt='logo with lama face' width={80}/>
+            <Image class="nav-logo-sm" src={logo} alt='logo with lama face' width={70}/>
         </a>
         <ul aria-label='primary nav' class="nav-desktop">
             <li><a href="">O mnie</a></li>
@@ -32,7 +32,8 @@ import HamburgerBtn from './HamburgerBtn.astro';
 </header>
 
 <style>
-    .backdrop {
+  
+  .backdrop {
     position: fixed;
     top: 0;
     display: block;
@@ -55,9 +56,12 @@ import HamburgerBtn from './HamburgerBtn.astro';
     display: none;
   }
   .nav-container {
-    background-color: rosybrown;
-    position: relative;
+    background-color: var(--rose-bg);
     display: flex;
+    position: relative;
+    /* top: 0;
+    width: 100%; */
+   
     padding: 10px;
     justify-content: space-between;
     align-items: center;
@@ -83,6 +87,9 @@ import HamburgerBtn from './HamburgerBtn.astro';
   }
   .active {
     transform: translateX(0);
+  }
+  .nav-logo-sm {
+    display: block;
   }
   /* .hamburger {
     display: flex;
@@ -123,8 +130,7 @@ import HamburgerBtn from './HamburgerBtn.astro';
     const navList = document.querySelector('.nav-mobile');
     const navLinks = document.querySelectorAll('.nav-mobile-link');
     const backdrop = document.querySelector('.backdrop');
-    
-  
+   
     const toggleHamburger = () => {
       hamburgerBtn!.classList.toggle('is-active');
       navList!.classList.toggle('active');
