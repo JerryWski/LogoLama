@@ -151,15 +151,24 @@ import { Icon } from "astro-icon/components";
 @media(min-width:900px) {
   .nav-desktop {
     display: flex;
-    gap: 60px;
+    gap: 30px;
   }
   .nav-desktop li a{
     font-family: var(--baloo-font);
     color: var(--text-blue);
     font-weight: 700;
-    min-width: 70px;
+    min-width: 90px;
+    padding: 10px 20px;
     display: inline-block;
+    border-radius: 6px;
+    transition: background-color .3s ease-in;
     font-size: clamp(1rem, 1.2vw, 1.5rem);
+  }
+  .nav-desktop li a:hover {
+    color: var(--wh);
+    box-shadow: inset 0px -4px 0px 0px rgb(0 0 0 / 10%);
+    background-color: var(--rose-main);
+    padding: 10px 20px;
   }
   header {
     display: flex;
@@ -184,9 +193,11 @@ import { Icon } from "astro-icon/components";
     display: inline-block;
     font-family: var(--mulish-font);
     color: var(--text-blue);
+    font-weight: 700;
   }
   .profession span {
     color: var(--rose-main);
+    
   }
  
   .nav-lit-contact {
