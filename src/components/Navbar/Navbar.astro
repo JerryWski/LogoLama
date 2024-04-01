@@ -1,0 +1,147 @@
+---
+import { Image } from "astro:assets";
+import logo from '../../assets/logo-test.webp'
+import HamburgerBtn from './HamburgerBtn.astro';
+---
+
+<header>
+    <nav class="nav-container">
+        <div class="nav-contacts">
+            <a href="">phone</a>
+            <a href="">e-mail</a>
+        </div>
+        <a href="/">
+            <Image src={logo} alt='logo with lama face' width={80}/>
+        </a>
+        <ul aria-label='primary nav' class="nav-desktop">
+            <li><a href="">O mnie</a></li>
+            <li><a href="">Usługi</a></li>
+            <li><a href="">Kontakt</a></li>
+        </ul>
+        <div class="nav-lit-contact">
+            <a href="">Konsultacja</a>
+        </div>
+        <HamburgerBtn />
+        <ul aria-label='primary nav' class="nav-mobile">
+            <li><a class="nav-mobile-link" href="">O mnie</a></li>
+            <li><a class="nav-mobile-link" href="">Usługi</a></li>
+            <li><a class="nav-mobile-link" href="">Kontakt</a></li>
+        </ul>
+    </nav>
+    <div class='backdrop'></div>
+</header>
+
+<style>
+    .backdrop {
+    position: fixed;
+    top: 0;
+    display: block;
+    left: 0;
+    background-color: rgb(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.5s ease,
+      visibility 0.5s;
+  }
+  .backdrop-active {
+    opacity: 1;
+    visibility: visible;
+  }
+  .nav-desktop, .nav-lit-contact, .nav-contacts {
+    display: none;
+  }
+  .nav-container {
+    background-color: rosybrown;
+    position: relative;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+  }
+  .nav-mobile {
+    position: absolute;
+    padding-top: 80px;
+    top: 77px;
+    left: 0;
+    width: 65%;
+    height: 100vh;
+    display: flex;
+    background: yellow;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--main-font);
+    gap: 40px;
+    flex-direction: column;
+    z-index: 19;
+    transform: translateX(-150%);
+    transition: transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+  }
+  .active {
+    transform: translateX(0);
+  }
+  /* .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 7px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 100;
+  }
+  .burger-line {
+    background-color: red;
+  }
+  .burger-line:nth-child(1) {
+    width: 34px;
+    height: 2px;
+    display: block;
+  }
+  .burger-line:nth-child(2) {
+    width: 32px;
+    height: 2px;
+    display: block;
+  }
+  .burger-line:nth-child(3) {
+    width: 30px;
+    height: 2px;
+    display: block;
+  } */
+@media(min-width:900px) {
+  .nav-desktop {
+    display: flex;
+  }
+}
+</style>
+<script>
+    const hamburgerBtn = document.querySelector('.hamburger');
+    const navList = document.querySelector('.nav-mobile');
+    const navLinks = document.querySelectorAll('.nav-mobile-link');
+    const backdrop = document.querySelector('.backdrop');
+    
+  
+    const toggleHamburger = () => {
+      hamburgerBtn!.classList.toggle('is-active');
+      navList!.classList.toggle('active');
+      document.body.classList.toggle('sticky-body');
+      backdrop!.classList.toggle('backdrop-active');
+    };
+  
+    const removeSticky = () => {
+      document.body.classList.remove('sticky-body');
+      navList!.classList.remove('active');
+      hamburgerBtn!.classList.remove('is-active');
+    };
+  
+    hamburgerBtn!.addEventListener('click', toggleHamburger);
+  
+    navLinks.forEach((links) => {
+      links.addEventListener('click', removeSticky);
+    });
+  </script>
+  
