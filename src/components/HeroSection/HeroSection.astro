@@ -4,14 +4,16 @@ import kid from '../../assets/hero-pic2.webp';
 import waves from '../../assets/waves-3.webp';
 import sun from '../../assets/sun.webp';
 import stars from '../../assets/stars.webp';
+import dices from '../../assets/dices.webp';
 ---
 
 <section class='hero-section'>
   <Image class='sun-icon' src={sun} alt='cartoon-sun' />
+  <Image class='dices-icon' src={dices} alt='cartoon-dices' />
   <div class='wrapper'>
     <div class='left-side'>
       <h1 class='hero-heading'>Logopedia i Pedagogia w Jednym Miejscu</h1>
-      <p class="hero-text">
+      <p class='hero-text'>
         Witaj w miejscu, gdzie komunikacja nabiera nowego wymiaru. Naszą pasją
         jest pomoc w pokonywaniu barier językowych, aby każde słowo płynęło
         swobodnie i pewnie
@@ -37,6 +39,7 @@ import stars from '../../assets/stars.webp';
     top: 0;
     right: 10px;
     width: 50px;
+    pointer-events: none;
     object-fit: contain;
     animation: moving 6s ease-in infinite forwards;
   }
@@ -44,11 +47,16 @@ import stars from '../../assets/stars.webp';
     position: absolute;
     bottom: 10px;
     left: 15px;
+    pointer-events: none;
     object-fit: contain;
     width: 70px;
     transform: scale(1);
     animation: resize 6s ease-in infinite forwards;
   }
+  .dices-icon {
+    display: none;
+  }
+
   section {
     padding-top: 150px;
     padding-bottom: 0px;
@@ -68,10 +76,11 @@ import stars from '../../assets/stars.webp';
     position: absolute;
     top: -100px;
     max-width: 600px;
+    z-index: 100;
     padding-inline: 30px;
   }
   .hero-heading {
-    font-size: clamp(1.7rem, 3vw, 4.5rem);
+    font-size: clamp(1.7rem, 3.5vw, 4rem);
     font-family: var(--baloo-font);
     color: var(--text-blue);
     font-weight: 800;
@@ -88,7 +97,8 @@ import stars from '../../assets/stars.webp';
     box-shadow: inset 0px -4px 0px 0px rgb(0 0 0 / 10%);
     background-color: var(--rose-main);
     border-radius: 6px;
-    padding: 10px 20px;
+    font-size: clamp(1rem, 1.2vw, 2rem);
+    padding: 10px 30px;
   }
   .hero-link:hover {
     transition: background-color 0.3s ease-in;
@@ -96,7 +106,6 @@ import stars from '../../assets/stars.webp';
     color: var(--wh);
   }
   .right-side {
-    width: fit-content;
     display: flex;
     justify-content: flex-end;
   }
@@ -109,8 +118,41 @@ import stars from '../../assets/stars.webp';
   }
 
   @media (min-width: 900px) {
+    .sun-icon {
+      right: 50px;
+      width: 90px;
+    }
+    .dices-icon {
+      position: absolute;
+      top: 110px;
+      display: block;
+      right: 675px;
+      pointer-events: none;
+      object-fit: contain;
+      width: 70px;
+      transform: scale(1);
+      animation: resize 6s ease-in infinite forwards;
+    }
     .left-side {
       position: relative;
+      max-width: 50%;
+    }
+    .right-side-img {
+      width: 80%;
+    }
+    .hero-heading {
+      line-height: 66px;
+      letter-spacing: 5px;
+    }
+    .hero-text {
+      display: block;
+      font-family: var(--mulish-font);
+      color: grey;
+      line-height: 24px;
+      font-size: 14px;
+    }
+    .hero-link {
+      top: 50px;
     }
   }
   @keyframes resize {
@@ -126,13 +168,13 @@ import stars from '../../assets/stars.webp';
   }
   @keyframes moving {
     0% {
-        transform: translate(0, 0);
+      transform: translate(0, 0);
     }
     50% {
-        transform: translate(-10px, 10px);
+      transform: translate(-10px, 10px);
     }
     100% {
-        transform: translate(0, 0);
+      transform: translate(0, 0);
     }
   }
 </style>
