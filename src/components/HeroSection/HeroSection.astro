@@ -1,28 +1,54 @@
 ---
-import { Image } from "astro:assets";
+import { Image } from 'astro:assets';
 import kid from '../../assets/hero-pic2.webp';
-import waves from '../../assets/waves-1.webp';
+import waves from '../../assets/waves-3.webp';
+import sun from '../../assets/sun.webp';
+import stars from '../../assets/stars.webp';
 ---
 
-<section class="hero-section">
-    <div class="wrapper">
-        <div class="left-side">
-            <h1 class="hero-heading">Logopedia i Pedagogia w Jednym Miejscu</h1>
-            <a class="hero-link" href="/">Sprawdź</a>
-        </div>
-        <div class="right-side">
-            <Image class='right-side-img' src={kid} alt='teacher and kid'/>
-        </div>
+<section class='hero-section'>
+  <Image class='sun-icon' src={sun} alt='cartoon-sun' />
+  <div class='wrapper'>
+    <div class='left-side'>
+      <h1 class='hero-heading'>Logopedia i Pedagogia w Jednym Miejscu</h1>
+      <p class="hero-text">
+        Witaj w miejscu, gdzie komunikacja nabiera nowego wymiaru. Naszą pasją
+        jest pomoc w pokonywaniu barier językowych, aby każde słowo płynęło
+        swobodnie i pewnie
+      </p>
+      <a class='hero-link' href='/'>Sprawdź</a>
     </div>
-    <Image class='test' src={waves} alt='wave-background'/>
+    <div class='right-side'>
+      <Image class='right-side-img' src={kid} alt='teacher and kid' />
+    </div>
+    <Image class='stars-icon' src={stars} alt='cartoon-stars' />
+  </div>
+  <Image class='waves' src={waves} alt='wave-background' />
 </section>
 
 <style>
-    .test {
-        height: auto;
-        position: absolute;
-        bottom: 0;
-    }
+  .waves {
+    height: auto;
+    position: absolute;
+    bottom: 0;
+  }
+  .sun-icon {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 50px;
+    object-fit: contain;
+    animation: moving 6s ease-in infinite forwards;
+  }
+  .stars-icon {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    object-fit: contain;
+    width: 70px;
+    transform: scale(1);
+    animation: resize 6s ease-in infinite forwards;
+  }
   section {
     padding-top: 150px;
     padding-bottom: 0px;
@@ -51,6 +77,9 @@ import waves from '../../assets/waves-1.webp';
     font-weight: 800;
     word-break: break-word;
   }
+  .hero-text {
+    display: none;
+  }
   .hero-link {
     position: relative;
     top: 30px;
@@ -62,7 +91,7 @@ import waves from '../../assets/waves-1.webp';
     padding: 10px 20px;
   }
   .hero-link:hover {
-    transition: background-color .3s ease-in;
+    transition: background-color 0.3s ease-in;
     background-color: var(--text-blue);
     color: var(--wh);
   }
@@ -81,7 +110,29 @@ import waves from '../../assets/waves-1.webp';
 
   @media (min-width: 900px) {
     .left-side {
-        position: relative;
+      position: relative;
+    }
+  }
+  @keyframes resize {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes moving {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(-10px, 10px);
+    }
+    100% {
+        transform: translate(0, 0);
     }
   }
 </style>
