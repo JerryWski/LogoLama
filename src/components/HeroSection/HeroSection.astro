@@ -1,17 +1,87 @@
 ---
-
+import { Image } from "astro:assets";
+import kid from '../../assets/hero-pic2.webp';
+import waves from '../../assets/waves-1.webp';
 ---
 
-<section>
-    <h1>To jest hero section</h1>
-    <h2>to jest hero section</h2>
+<section class="hero-section">
+    <div class="wrapper">
+        <div class="left-side">
+            <h1 class="hero-heading">Logopedia i Pedagogia w Jednym Miejscu</h1>
+            <a class="hero-link" href="/">Sprawdź</a>
+        </div>
+        <div class="right-side">
+            <Image class='right-side-img' src={kid} alt='teacher and kid'/>
+        </div>
+    </div>
+    <Image class='test' src={waves} alt='wave-background'/>
 </section>
 
 <style>
-    section {
-        padding-top: 200px;
-        padding-inline: 10px;
-        padding-bottom: 200px;
-        background-color: var(--rose-bg);
+    .test {
+        height: auto;
+        position: absolute;
+        bottom: 0;
     }
+  section {
+    padding-top: 150px;
+    padding-bottom: 0px;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--rose-bg);
+  }
+  .wrapper {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    z-index: 100;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .left-side {
+    position: absolute;
+    top: -100px;
+    max-width: 600px;
+    padding-inline: 30px;
+  }
+  .hero-heading {
+    font-size: clamp(1.7rem, 3vw, 4.5rem);
+    font-family: var(--baloo-font);
+    color: var(--text-blue);
+    font-weight: 800;
+    word-break: break-word;
+  }
+  .hero-link {
+    position: relative;
+    top: 30px;
+    color: var(--wh);
+    font-family: var(--baloo-font);
+    box-shadow: inset 0px -4px 0px 0px rgb(0 0 0 / 10%);
+    background-color: var(--rose-main);
+    border-radius: 6px;
+    padding: 10px 20px;
+  }
+  .hero-link:hover {
+    transition: background-color .3s ease-in;
+    background-color: var(--text-blue);
+    color: var(--wh);
+  }
+  .right-side {
+    width: fit-content;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .right-side-img {
+    width: 50%;
+    object-fit: contain;
+    height: auto;
+    z-index: 10;
+    position: relative;
+  }
+
+  @media (min-width: 900px) {
+    .left-side {
+        position: relative;
+    }
+  }
 </style>
