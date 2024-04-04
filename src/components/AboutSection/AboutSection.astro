@@ -1,20 +1,158 @@
 ---
-
+import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
+import supermom from '../../assets/supermon2-2.webp';
 ---
 
-<section>
-  sadasd
-  <p>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat totam cum
-    soluta quibusdam nulla nobis et nam ratione, perferendis alias,
-    exercitationem non eveniet iusto debitis, asperiores voluptatum numquam
-    impedit voluptates.
-  </p>
+<section class='about-section'>
+  <div class='left-wrapper'>
+    <h2 class='about-heading'>O mnie</h2>
+    <h3 class='about-subheading'>Logopeda - nauczyciel - terapeuta</h3>
+    <span class='about-line'></span>
+    <p class='about-text'>
+      LogoLama – nauczycielka i logopedka. Jeśli niepokoi Cię cokolwiek w mowie
+      Twojego dziecka, zgłoś się do mnie. Indywidualnie podchodzę do każdego
+      dziecka. Czerpię inspiracje z różnych technik logopedycznych, nieustannie
+      się rozwijam.
+    </p>
+    <ul class='about-list'>
+      <li class='about-list-item'>
+        <Icon name='dot' width={20} height={20} />Indywidualne podejście
+      </li>
+      <li class='about-list-item'>
+        <Icon name='dot' width={20} height={20} />Różnorodne metody
+      </li>
+      <li class='about-list-item'>
+        <Icon name='dot' width={20} height={20} />Wieloletnie doświadczenie
+      </li>
+      <li class='about-list-item'>
+        <Icon name='dot' width={20} height={20} />Przyjazna i wspierająca
+        atmosfera
+      </li>
+    </ul>
+    <a class='about-link' href='/'>Czytaj dalej</a>
+  </div>
+  <div class='right-wrapper'>
+    <Image
+      class='right-image'
+      src={supermom}
+      alt='super mom flying with kids'
+    />
+  </div>
 </section>
 
 <style>
-  section {
+  .about-section {
     padding-top: 130px;
+    padding-bottom: 130px;
     background-color: #4559b2;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-image: url('/about-bg.webp');
+    background-repeat: no-repeat;
+    background-position-y: 100px;
+    overflow: hidden;
+  }
+  .about-section::after {
+    position: absolute;
+    content: '';
+    bottom: -5px;
+    background-image: url('/waves-4-1.webp');
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 183px;
+  }
+  .left-wrapper {
+    padding: 30px;
+  }
+  .about-heading {
+    font-family: var(--mulish-font);
+    font-size: clamp(2.2rem, 2.5vw, 2.7rem);
+    font-weight: 800;
+    letter-spacing: 1px;
+    line-height: normal;
+    color: var(--wh);
+    text-transform: uppercase;
+  }
+  .about-subheading {
+    font-family: var(--baloo-font);
+    font-size: clamp(1.2rem, 1.7vw, 2.3rem);
+    margin-block: 15px;
+    color: var(--rose-main);
+  }
+  .about-line {
+    display: block;
+    margin-block: 20px;
+    border-bottom: 2px solid var(--wh);
+    border-radius: 6px;
+    width: 50%;
+  }
+  .about-text {
+    font-family: var(--baloo-font);
+    font-size: clamp(1.1rem, 1.2vw, 1.3rem);
+    color: var(--rose-bg);
+    line-height: 30px;
+  }
+  .about-list {
+    list-style: none;
+    margin-block: 20px;
+    background-color: var(--bg-blue);
+    font-family: var(--mulish-font);
+    padding-block: 15px;
+    border-radius: 6px;
+  }
+  .about-list-item {
+    display: flex;
+    margin: 3px;
+    line-height: 26px;
+    align-items: center;
+    color: var(--rose-bg);
+  }
+  .about-link {
+    color: var(--wh);
+    position: relative;
+    top: 20px;
+    font-family: var(--baloo-font);
+    box-shadow: inset 0px -4px 0px 0px rgb(0 0 0 / 10%);
+    background-color: var(--sea-blue);
+    border-radius: 6px;
+    font-size: clamp(1rem, 1.2vw, 2rem);
+    padding: 10px 30px;
+  }
+  .rigth-wrapper {
+    max-width: 50%;
+  }
+  .right-image {
+    padding: 30px;
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+  }
+  @media (min-width: 1350px) {
+    .about-section {
+      flex-direction: row;
+      padding-inline: 200px;
+    }
+    .left-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 50%;
+    }
+    .rigth-wrapper {
+      width: 50%;
+    }
+    .about-list-item {
+      font-size: 1.2rem;
+    }
+  }
+  @media (min-width:900px) {
+    .left-wrapper {
+      width: 50%;
+    }
   }
 </style>
