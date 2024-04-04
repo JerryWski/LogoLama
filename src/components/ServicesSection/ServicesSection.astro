@@ -1,13 +1,125 @@
 ---
+import { Image } from 'astro:assets';
+import card from '../../assets/card.webp';
+import card2 from '../../assets/card2.webp';
+import card3 from '../../assets/card3.webp';
+import card6 from '../../assets/card6.webp';
+import card5 from '../../assets/card5.webp';
 ---
 
-
-<section class="services-section">
-    <h2>Usługi</h2>
+<section class='services-section'>
+  <div class="headers-wrapper">
+    <h2 class='services-heading'>Usługi</h2>
+    <h3 class='services-subheading'>
+      Kompleksowe wsparcie rozwoju twojego dziecka
+    </h3>
+  </div>
+  <div class='cards-wrapper'>
+    <div class='card-box'>
+      <Image class='card-image' src={card} alt='kid playing with toys' />
+      <h3>Diagnoza Logopedyczna</h3>
+      <a href="">Zobacz więcej</a>
+    </div>
+    <div class='card-box'>
+      <Image class='card-image' src={card2} alt='kid playing with toys' />
+      <h3>Terapia Logopedyczna</h3>
+      <a href="">Zobacz więcej</a>
+    </div>
+    <div class='card-box'>
+      <Image class='card-image' src={card3} alt='kid playing with toys' />
+      <h3>Terapia Pedagogiczna</h3>
+      <a href="">Zobacz więcej</a>
+    </div>
+    <div class='card-box'>
+      <Image class='card-image' src={card6} alt='kid playing with toys' />
+      <h3>Terapia Ręki</h3>
+      <a href="">Zobacz więcej</a>
+    </div>
+    <div class='card-box'>
+      <Image class='card-image' src={card5} alt='kid playing with toys' />
+      <h3>Konsultacja Pedagogiczna</h3>
+      <a href="">Zobacz więcej</a>
+    </div>
+  </div>
 </section>
 
 <style>
-    .services-section {
-        height: 700px;
+  .services-section {
+    padding-inline: 30px;
+    padding-bottom: 100px;
+    background-color: var(--rose-bg);
+  }
+  .services-heading {
+    font-family: var(--mulish-font);
+    font-size: clamp(2.2rem, 3vw, 3.5rem);
+    font-weight: 800;
+    padding-top: 60px;
+    letter-spacing: 1px;
+    line-height: normal;
+    color: var(--text-blue);
+    text-transform: uppercase;
+  }
+  .services-subheading {
+    font-family: var(--baloo-font);
+    font-size: clamp(1.2rem, 1.7vw, 2.3rem);
+    margin-block: 15px;
+    color: var(--rose-main);
+  }
+  .cards-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  .card-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px 10px 30px 10px;
+    max-width: 400px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0px 5px 18px 0px rgba(0, 0, 0, 0.08);
+    background-color: var(--wh);
+  }
+  .card-box h3 {
+    padding: 40px 10px 10px 10px;
+    font-family: var(--baloo-font);
+    font-size: clamp(1.3rem,1.4vw,1.6rem);
+    color: var(--text-blue);
+  }
+  .card-box a {
+    padding: 10px 20px 10px 20px;
+    font-family: var(--mulish-font);
+    color: var(--wh);
+    margin-inline: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    transition: background-color .3s;
+    background-color: var(--rose-main);
+    box-shadow: inset 0px -4px 0px 0px rgb(0 0 0 / 10%);
+  }
+  .card-box a:hover {
+    background-color: var(--text-blue);
+    
+  }
+  .card-image {
+    width: 100%;
+    border-radius: 6px;
+    object-fit: contain;
+    height: auto;
+  }
+  @media (min-width: 900px) {
+    .cards-wrapper {
+        padding-top: 40px;
+        max-width: 1440px;
+        margin: auto;
+        flex-direction: row;
     }
+    .services-heading, .services-subheading {
+        text-align: center;
+    }
+  }
 </style>
