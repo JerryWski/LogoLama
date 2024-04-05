@@ -1,50 +1,49 @@
 ---
-
+import { Image } from 'astro:assets';
+import kids from '../../assets/cta-bg2.webp';
 ---
 
 <section class='action-section'>
   <h2 class='action-heading'>
-    Skontaktuj się znami w celu poznania szczegółów oferty
+    Skontaktuj się ze mną i dowiedź się jak mogę pomóc Twojemu dziecku
   </h2>
-  <h3 class='action-subheading'>
-    Zapraszamy do kontaktu w celu uzyskania szczegółowych informacji na temat
-    naszej oferty lub rozpoczęcia współpracy.
-  </h3>
-  <div class='action-links'>
-    <a class='link' href='/'>Kontakt</a>
-  </div>
+  <Image class='action-image' src={kids} alt='cheerful-kids' />
+  <h3 class='action-subheading'>Zadzwoń lub napisz aby ustalić szczegóły.</h3>
+  <a class='action-link' href='/'>Kontakt</a>
 </section>
 
 <style>
   .action-section {
-    padding: 20px;
+    padding-inline: 30px;
     padding-top: 100px;
     padding-bottom: 100px;
     display: flex;
-    background-image: url('/cta-bg.webp');
-    background-size: cover;
-    background-position: center center;
-    background-blend-mode: multiply;
-    background-color: rgba(22, 18, 18, 0.3);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    margin-top: 0px;
-    color: var(--base-gold);
+    position: relative;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
+  .action-image {
+    max-width: 100%;
+    object-fit: contain;
+    height: auto;
+  }
   .action-heading {
-    font-size: clamp(2rem, 2.5vw, 3rem);
-    color: var(--base-black);
-    font-family: var(--main-font);
-    margin-top: 10px;
-    margin-bottom: 34px;
+    font-size: clamp(1.8rem, 2.5vw, 3rem);
+    color: var(--text-blue);
+    letter-spacing: 1px;
+    font-family: var(--baloo-font);
+    margin-top: 40px;
+    text-align: center;
+    margin-bottom: 15px;
   }
   .action-subheading {
-    font-family: var(--roboto-font);
-    font-size: clamp(1rem, 1.2vw, 1.5rem);
-    font-weight: 300;
-    color: var(--sub-black);
+    font-family: var(--mulish-font);
+    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+    font-weight: 700;
+    color: var(--text-blue);
+    text-align: center;
+    margin-top: 15px;
     line-height: 24px;
   }
   .action-links {
@@ -54,26 +53,26 @@
     align-items: center;
     width: 100%;
   }
-  .link {
-    font-family: var(--roboto-font);
-    border: none;
-    padding: 12px 64px;
-    background-color: var(--base-red);
-    cursor: pointer;
-    color: var(--base-wh);
-    border: none;
-    transition: .2s all ease-in;
+  .action-link {
+    color: var(--wh);
+    margin-top: 25px;
+    font-family: var(--baloo-font);
+    box-shadow: inset 0px -4px 0px 0px rgb(0 0 0 / 10%);
+    background-color: var(--sea-blue);
+    border-radius: 6px;
+    font-size: clamp(1.2rem, 1.2vw, 2rem);
+    padding: 10px 60px;
+    transition: background-color 0.3s;
+  }
+  .action-link:hover {
+    background-color: var(--rose-main);
   }
   .link:hover {
     background-color: var(--base-gold);
-
   }
   @media (min-width: 900px) {
     .action-heading {
       margin-top: 50px;
-    }
-    .action-links {
-      justify-content: center;
     }
   }
 </style>
