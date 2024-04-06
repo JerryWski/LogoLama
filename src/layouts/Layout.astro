@@ -1,4 +1,5 @@
 ---
+import ContactSection from '../components/ContactSection/ContactSection.astro';
 import Navbar from '../components/Navbar/Navbar.astro';
 import '../utils/CustomFonts.css';
 interface Props {
@@ -23,6 +24,7 @@ const {
   <body>
     <Navbar />
     <slot />
+    <ContactSection />
   </body>
 </html>
 <style is:global>

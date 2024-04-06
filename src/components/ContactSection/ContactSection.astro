@@ -1,0 +1,49 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../../assets/logo-test3.webp';
+---
+
+<section class='contact-section'>
+  <div>
+    <div class='first-column'>
+      <Image class='contact-logo' src={logo} alt='logo-image' />
+      <p>
+        LogoLama to cała ja – Paulina Kopaczewska-Rudaś – nauczycielka i
+        logopedka. Logopedia to moja pasja, spełniam się pracując z dziećmi i
+        widząc efekty pracy logopedycznej. Nieustannie się rozwijam i poszerzam
+        swój warsztat pracy.
+      </p>
+    </div>
+    <div class='second-column'>
+      <h2>Kontakt</h2>
+      <p>tel</p>
+      <p>maik</p>
+      <p>facebook</p>
+    </div>
+    <div class="third-column">
+      <h3>Na skróty</h3>
+      <ul class='contact-list'>
+        <li><a href=''>Strona Główna</a></li>
+        <li><a href=''></a>O mnie</li>
+        <li><a href=''></a>Usługi</li>
+        <li><a href=''></a>Polityka Prywatności</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-section {
+    padding-top: 100px;
+    background-color: var(--bg-blue);
+    background-image: url('/clouds-bg2.webp');
+    background-position: left 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .contact-logo {
+    object-fit: contain;
+    width: 200px;
+    height: auto;
+  }
+</style>
