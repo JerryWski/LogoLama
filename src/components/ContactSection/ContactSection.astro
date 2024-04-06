@@ -1,10 +1,11 @@
 ---
 import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
 import logo from '../../assets/logo-test3.webp';
 ---
 
 <section class='contact-section'>
-  <div>
+  <div class='contact-wrapper'>
     <div class='first-column'>
       <Image class='contact-logo' src={logo} alt='logo-image' />
       <p>
@@ -16,17 +17,25 @@ import logo from '../../assets/logo-test3.webp';
     </div>
     <div class='second-column'>
       <h2>Kontakt</h2>
-      <p>tel</p>
-      <p>maik</p>
-      <p>facebook</p>
+      <div>
+        <a class='link-phone' href='tel:+48668278485'
+          ><Icon class='icon' name='phone2' width={20} height={20} /></a
+        >
+        <a class='link-mail' href='mailto:logolama1@wp.pl'
+          ><Icon name='mail2' width={20} height={20} /></a
+        >
+        <a href='https://www.facebook.com/search/top/?q=logolama'
+          ><Icon name='face' width={20} height={20} /></a
+        >
+      </div>
     </div>
-    <div class="third-column">
-      <h3>Na skróty</h3>
+    <div class='third-column'>
+      <h3>Na skróty:</h3>
       <ul class='contact-list'>
-        <li><a href=''>Strona Główna</a></li>
-        <li><a href=''></a>O mnie</li>
-        <li><a href=''></a>Usługi</li>
-        <li><a href=''></a>Polityka Prywatności</li>
+        <li><a href='#'>Strona Główna</a></li>
+        <li><a href='/'>O mnie</a></li>
+        <li><a href='/'>Usługi</a></li>
+        <li><a href='/'>Polityka Prywatności</a></li>
       </ul>
     </div>
   </div>
@@ -34,16 +43,98 @@ import logo from '../../assets/logo-test3.webp';
 
 <style>
   .contact-section {
-    padding-top: 100px;
-    background-color: var(--bg-blue);
+    padding-top: 50px;
+    position: relative;
+    padding-inline: 30px;
+    background-color: #4559b2;
     background-image: url('/clouds-bg2.webp');
     background-position: left 20px;
     background-repeat: no-repeat;
     background-size: contain;
+    color: var(--rose-bg);
+  }
+  .contact-section::before {
+    position: absolute;
+    content: '';
+    background-image: url('/waves-4-3.webp');
+    top: -180px;
+    left: -1px;
+    height: 183px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .contact-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .contact-logo {
     object-fit: contain;
     width: 200px;
     height: auto;
+    margin-bottom: 20px;
+  }
+  .first-column,
+  .second-column,
+  .third-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+  .first-column p {
+    font-family: var(--baloo-font);
+    text-align: center;
+  }
+  .second-column div {
+    display: flex;
+    gap: 20px;
+  }
+  .second-column h2 {
+    font-size: 2.1rem;
+    font-family: var(--mulish-font);
+    color: var(--wh);
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .second-column a {
+    background-color: var(--sea-blue);
+    font-size: 22px;
+    margin-right: 20px;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    color: var(--wh);
+    line-height: 50px;
+    text-align: center;
+    border-radius: 100px;
+    box-shadow: inset 0px -4px 0px 0px rgb(0 0 0 / 10%);
+  }
+  .second-column .link-phone {
+    background-color: var(--rose-main);
+  }
+  .second-column .link-mail {
+    background-color: #fcd380;
+  }
+  .third-column h3 {
+    font-family: var(--mulish-font);
+    font-size: 2rem;
+  }
+  .third-column ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+  .third-column ul li a {
+    font-size: 1.1rem;
+    color: var(--rose-logo);
   }
 </style>
