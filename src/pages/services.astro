@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeadersLinks from '../components/SharedComponents/HeadersLinks';
+import { Icon } from "astro-icon/components";
+---
+
+<Layout title="Logopeda i Pedagog Olsztyn i okolice">
+<section class="offer-section">
+    <h1 class="offer-heading">Zabawa i Nauka - Oferta dla Twojego Dziecka</h1>
+    <HeadersLinks href1="/" title1="Strona Główna" href2="/services" title2="Usługi"/>
+</section>
+</Layout>
+
+
+<style>
+    .offer-section {
+        height: 300px;
+        background-color: var(--rose-bg);
+        background-image: url('/services-bg2.webp');
+        background-repeat: no-repeat;
+        background-position: right top;
+        background-size: cover;
+        margin-bottom: 400px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .offer-heading {
+        font-family: var(--baloo-font);
+        color: var(--text-blue);
+        padding-left: 30px;
+        font-size: clamp(2rem,3vw,3rem);
+    }
+</style>
