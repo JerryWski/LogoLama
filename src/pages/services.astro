@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import HeadersLinks from '../components/SharedComponents/HeadersLinks';
 import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
+import offer1 from '../assets/offer1.webp';
 ---
 
 <Layout title='Logopeda i Pedagog Olsztyn i okolice'>
@@ -18,7 +20,33 @@ import { Icon } from 'astro-icon/components';
   </section>
 
   <section class='offers-section'>
-    
+    <div class='offers-wrapper'>
+      <div class='card'>
+        <Image class='card-image' src={offer1} alt='therapist teaching kid' />
+        <div class='card-container'>
+          <div class='card-header-wrapper'>
+            <Icon class='card-icon' name='speech' />
+            <h3 class='card-header'>Diagnoza Logopedyczna</h3>
+          </div>
+          <p class='card-short-text'>
+            Na diagnozę składa się wywiad biologiczno-środowiskowy z rodzicem,
+            badanie słuchu fonemowego, ocena budowy i sprawności artykulatorów,
+            badanie artykulacji. Przed pierwszą wizytą, proszę o przypomnienie
+            najważniejszych faktów z rozwoju dziecka.
+          </p>
+          <span class="card-price">Cena usługi - 150zł</span>
+        </div>
+      </div>
+
+      <div class='text'>
+        <p class='text-long-description'>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quam
+          accusantium minima magnam harum odio quisquam velit inventore,
+          adipisci itaque ut culpa sed laudantium? Provident quae suscipit
+          dignissimos voluptatem natus!
+        </p>
+      </div>
+    </div>
   </section>
 </Layout>
 
@@ -30,7 +58,7 @@ import { Icon } from 'astro-icon/components';
     background-repeat: no-repeat;
     background-position: right top;
     background-size: cover;
-    margin-bottom: 400px;
+    margin-bottom: 100px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -40,11 +68,91 @@ import { Icon } from 'astro-icon/components';
     font-family: var(--baloo-font);
     color: var(--text-blue);
     padding-left: 30px;
-    font-size: clamp(2rem, 3vw, 3rem);
+    font-size: clamp(1.7rem, 3vw, 3rem);
+  }
+  .offers-section {
+    margin-bottom: 300px;
+    padding-inline: 30px;
+  }
+  .offers-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .card {
+    border: 1px solid #f5f5f5;
+    border-radius: 6px;
+    overflow: hidden;
+    max-width: 100%;
+    border-bottom: 3px solid var(--text-blue2);
+  }
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    position: relative;
+  }
+  .card-container::before {
+    position: absolute;
+    content: '';
+    top: -13px;
+    left: 0;
+    background-image: url('/one-wave.webp');
+    background-size: auto 100%;
+    background-repeat: repeat-x; 
+    width: 100%;
+    height: 13px;
+  }
+
+  .card-image {
+    object-fit: contain;
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+  }
+  .card-header-wrapper {
+    display: flex;
+    gap: 15px;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .card-icon {
+    width: 55px;
+    height: 55px;
+  }
+  .card-header {
+    font-size: clamp(1.5rem, 1.5vw, 2.5rem);
+    font-family: var(--baloo-font);
+    color: var(--text-blue);
+  }
+  .card-short-text {
+    font-family: var(--mulish-font);
+    color: var(--grey);
+    line-height: 26px;
+    margin-bottom: 20px;
+  }
+  .card-price {
+    color: var(--text-blue2);
+    font-family: var(--baloo-font);
+    font-size: 1.3rem;
+    margin-bottom: 15px;
   }
   @media (min-width: 900px) {
     .offer-header-wrapper {
       padding-left: 100px;
+    }
+    .offers-wrapper {
+        padding-inline: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+    }
+    .card {
+        width: 30%;
+    }
+    .text {
+        width: 30%;
     }
   }
 </style>
