@@ -7,6 +7,9 @@ import offer1 from '../assets/offer1.webp';
 import offer2 from '../assets/offer2.webp';
 import offer3 from '../assets/offer3.webp';
 import offer4 from '../assets/offer4.webp';
+import sun from '../assets/sun.webp';
+import stars from '../assets/stars.webp';
+import dices from '../assets/dices.webp';
 ---
 
 <Layout title='Logopeda i Pedagog Olsztyn i okolice'>
@@ -24,7 +27,7 @@ import offer4 from '../assets/offer4.webp';
 
   <section class='offers-section'>
     <div class='offers-wrapper'>
-      <div class='card'>
+      <div class='card one'>
         <Image class='card-image' src={offer1} alt='therapist teaching kid' />
         <div class='card-container'>
           <div class='card-header-wrapper'>
@@ -42,6 +45,7 @@ import offer4 from '../assets/offer4.webp';
       </div>
 
       <div class='text'>
+        <Image class='sun-icon' src={sun} alt='cartoon-sun' />
         <h3>Co to jest - diagnoza logopedyczna?</h3>
         <p class='text-long-description'>
           Diagnoza logopedyczna to zbiór zasad i metod badania, który ma na celu
@@ -63,7 +67,7 @@ import offer4 from '../assets/offer4.webp';
     </div>
 
     <div class='offers-wrapper'>
-      <div class='card'>
+      <div class='card two'>
         <Image class='card-image' src={offer2} alt='therapist teaching kid' />
         <div class='card-container'>
           <div class='card-header-wrapper'>
@@ -79,6 +83,7 @@ import offer4 from '../assets/offer4.webp';
       </div>
 
       <div class='text'>
+        <Image class='dices-icon' src={dices} alt='cartoon-dices' />
         <h3>Na czym polega terapia logopedyczna?</h3>
         <p class='text-long-description'>
           Całość specyficznych, zamierzonych oddziaływań naprawczych,
@@ -103,7 +108,7 @@ import offer4 from '../assets/offer4.webp';
     </div>
 
     <div class='offers-wrapper'>
-      <div class='card'>
+      <div class='card three'>
         <Image class='card-image' src={offer3} alt='therapist teaching kid' />
         <div class='card-container'>
           <div class='card-header-wrapper'>
@@ -118,6 +123,7 @@ import offer4 from '../assets/offer4.webp';
       </div>
 
       <div class='text'>
+        <Image class='stars-icon' src={stars} alt='cartoon-stars' />
         <h3>Terapia Pedagogiczna - terminologia</h3>
         <p class='text-long-description'>
           Terapia pedagogiczna to całokształt działań o charakterze
@@ -139,7 +145,7 @@ import offer4 from '../assets/offer4.webp';
     </div>
 
     <div class='offers-wrapper'>
-      <div class='card'>
+      <div class='card four'>
         <Image class='card-image' src={offer4} alt='therapist teaching kid' />
         <div class='card-container'>
           <div class='card-header-wrapper'>
@@ -177,6 +183,33 @@ import offer4 from '../assets/offer4.webp';
 </Layout>
 
 <style>
+  .sun-icon {
+    position: absolute;
+    top: -100px;
+    right: 10px;
+    width: 80px;
+    pointer-events: none;
+    object-fit: contain;
+    animation: moving 6s ease-in infinite forwards;
+  }
+  .dices-icon {
+    position: absolute;
+    top: -100px;
+    display: block;
+    left: 5px;
+    pointer-events: none;
+    object-fit: contain;
+    width: 70px;
+  }
+  .stars-icon {
+    position: absolute;
+    bottom: -30px;
+    left: 15px;
+    pointer-events: none;
+    object-fit: contain;
+    width: 90px;
+    opacity: .7;
+  }
   .offer-header-container {
     height: 300px;
     background-color: var(--rose-bg);
@@ -207,13 +240,23 @@ import offer4 from '../assets/offer4.webp';
     padding-block: 40px;
     margin-bottom: 50px;
   }
-
   .card {
     border: 1px solid #f5f5f5;
     border-radius: 6px;
     overflow: hidden;
     max-width: 100%;
     order: 2;
+  }
+  .one {
+    border-bottom: 3px solid var(--rose-main);
+  }
+  .two {
+    border-bottom: 3px solid var(--sea-blue);
+  }
+  .three {
+    border-bottom: 3px solid rgb(252, 211, 128);
+  }
+  .four {
     border-bottom: 3px solid var(--text-blue2);
   }
   .card-container {
@@ -273,6 +316,7 @@ import offer4 from '../assets/offer4.webp';
     order: 1;
     background: var(--rose-bg);
     padding: 20px;
+    position: relative;
     border-radius: 6px;
   }
   .text h3 {
@@ -287,6 +331,8 @@ import offer4 from '../assets/offer4.webp';
     color: var(--text-blue);
     font-size: clamp(0.9rem, 1.1vw, 1rem);
     font-family: var(--baloo-font);
+    position: relative;
+    z-index: 100;
   }
   @media (min-width: 900px) {
     .offer-header-wrapper {
