@@ -46,7 +46,7 @@ import dices from '../assets/dices.webp';
 
       <div class='text'>
         <Image class='sun-icon' src={sun} alt='cartoon-sun' />
-        <h3 id="service1">Co to jest - diagnoza logopedyczna?</h3>
+        <h3 id='service1'>Co to jest - diagnoza logopedyczna?</h3>
         <p class='text-long-description'>
           Diagnoza logopedyczna to zbiór zasad i metod badania, który ma na celu
           ocenę rozwoju oraz stanu mowy, jak też dookreślenie nieprawidłowości
@@ -84,7 +84,7 @@ import dices from '../assets/dices.webp';
 
       <div class='text'>
         <Image class='dices-icon' src={dices} alt='cartoon-dices' />
-        <h3 id="service2">Na czym polega terapia logopedyczna?</h3>
+        <h3 id='service2'>Na czym polega terapia logopedyczna?</h3>
         <p class='text-long-description'>
           Całość specyficznych, zamierzonych oddziaływań naprawczych,
           ukierunkowanych na usunięcie patologicznych zjawisk logopedycznych
@@ -124,7 +124,7 @@ import dices from '../assets/dices.webp';
 
       <div class='text'>
         <Image class='stars-icon' src={stars} alt='cartoon-stars' />
-        <h3 id="service3">Terapia Pedagogiczna - terminologia</h3>
+        <h3 id='service3'>Terapia Pedagogiczna - terminologia</h3>
         <p class='text-long-description'>
           Terapia pedagogiczna to całokształt działań o charakterze
           korekcyjno-kompensacyjnym. Polega na usprawnianiu zaburzonych funkcji
@@ -160,7 +160,7 @@ import dices from '../assets/dices.webp';
       </div>
 
       <div class='text'>
-        <h3 id="service4">W czym pomaga terapia ręki?</h3>
+        <h3 id='service4'>W czym pomaga terapia ręki?</h3>
         <p class='text-long-description'>
           Terapia ręki skupia się na poprawie funkcjonowania całej kończyny
           górnej, począwszy od barku, przez ramię, przedramię, aż po nadgarstek,
@@ -208,7 +208,7 @@ import dices from '../assets/dices.webp';
     pointer-events: none;
     object-fit: contain;
     width: 90px;
-    opacity: .7;
+    opacity: 0.7;
   }
   .offer-header-container {
     height: 300px;
@@ -306,11 +306,24 @@ import dices from '../assets/dices.webp';
     margin-bottom: 20px;
   }
   .card-price {
-    color: var(--text-blue2);
-    font-family: var(--baloo-font);
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 15px;
+    padding: 15px 25px;
+    width: fit-content;
+    font-family: var(--mulish-font);
+    color: var(--wh);
+    border-radius: 6px;
+    background-color: var(--rose-main);
+  }
+  .two > div:nth-child(2) > span:nth-child(3) {
+    background-color: var(--sea-blue);
+  }
+  .three > div:nth-child(2) > span:nth-child(3) {
+    background-color: rgb(252,211,128);
+  }
+  .four > div:nth-child(2) > span:nth-child(3) {
+    background-color: var(--text-blue);
   }
   .text {
     order: 1;
