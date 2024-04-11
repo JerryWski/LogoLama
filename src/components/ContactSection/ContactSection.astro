@@ -24,7 +24,9 @@ import logo from '../../assets/logo-test3.webp';
         <a class='link-mail' href='mailto:logolama1@wp.pl'
           ><Icon name='mail2' width={20} height={20} /></a
         >
-        <a class="link-facebook"href='https://www.facebook.com/search/top/?q=logolama'
+        <a
+          class='link-facebook'
+          href='https://www.facebook.com/search/top/?q=logolama'
           ><Icon name='face' width={20} height={20} /></a
         >
       </div>
@@ -34,7 +36,7 @@ import logo from '../../assets/logo-test3.webp';
       <ul class='contact-list'>
         <li><a href='#'>Strona Główna</a></li>
         <li><a href='/'>O mnie</a></li>
-        <li><a href='/'>Usługi</a></li>
+        <li><a aria-label='link to services' href='/services'>Usługi</a></li>
         <li><a href='/'>Polityka Prywatności</a></li>
       </ul>
     </div>
@@ -131,8 +133,10 @@ import logo from '../../assets/logo-test3.webp';
   .second-column .link-phone {
     background-color: var(--rose-main);
   }
-  .link-phone:hover, .link-mail:hover, .link-facebook:hover {
-    opacity: .8;
+  .link-phone:hover,
+  .link-mail:hover,
+  .link-facebook:hover {
+    opacity: 0.8;
   }
   .second-column .link-mail {
     background-color: #fcd380;
@@ -155,30 +159,31 @@ import logo from '../../assets/logo-test3.webp';
     font-size: 1.1rem;
     font-family: var(--baloo-font);
     font-weight: 700;
-    color: #F0D0DC;
+    color: #f0d0dc;
   }
   @media (min-width: 900px) {
     .contact-section {
-        background-size: 800px;
-        padding-inline: 200px;
+      background-size: 800px;
+      padding-inline: 200px;
     }
     .contact-section::after {
-        background-size: contain;
+      background-size: contain;
     }
     .contact-wrapper {
-        align-items: start;
-        margin-top: 40px;
-        flex-direction: row;
-        gap: 100px;
+      align-items: start;
+      margin-top: 40px;
+      flex-direction: row;
+      gap: 100px;
     }
     .first-column {
-        max-width: 30%;
+      max-width: 30%;
     }
     .second-column {
-        align-items: start;
+      align-items: start;
     }
-    .third-column, .third-column .contact-list {
-        align-items: start;
+    .third-column,
+    .third-column .contact-list {
+      align-items: start;
     }
   }
 </style>
