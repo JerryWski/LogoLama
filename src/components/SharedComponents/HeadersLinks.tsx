@@ -12,9 +12,9 @@ interface Props {
 const HeadersLinks: React.FC<Props> = ({ href1, href2, title1, title2 }) => {
   return (
     <div className='headers-links'>
-      <a href={href1}> {title1}</a>
+      <a aria-label='backlink navigating to main page' href={href1}> {title1}</a>
       <IconDot />
-      <a href={href2}>{title2}</a>
+      <a aria-label='backlink navigating to current page' href={href2}>{title2}</a>
     </div>
   );
 };
