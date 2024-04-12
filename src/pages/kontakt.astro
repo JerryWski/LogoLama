@@ -1,0 +1,47 @@
+contact---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import Layout from '../layouts/Layout.astro';
+import HeadersLinks from "../components/SharedComponents/HeadersLinks";
+---
+
+<Layout title='Logopeda i Pedagog dla dzieci - Olsztyn i okolice'>
+    <section class='contact-header-container'>
+        <div class='contact-header-wrapper'>
+          <h1 class='contact-heading'>Trochę o Mnie...</h1>
+          <HeadersLinks
+            href1='/'
+            title1='Strona Główna'
+            href2='/kontakt'
+            title2='Kontakt'
+          />
+        </div>
+      </section>
+</Layout>
+
+<style>
+    .contact-header-container {
+    height: 300px;
+    background-color: var(--rose-bg);
+    background-image: url('/services-bg2.webp');
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .contact-heading {
+    font-family: var(--baloo-font);
+    color: var(--text-blue);
+    padding-left: 30px;
+    font-size: clamp(1.7rem, 3vw, 3.5rem);
+  }
+@media (min-width: 900px) {
+    .contact-header-wrapper {
+      padding-left: 230px;
+    }
+}
+</style>

@@ -8,7 +8,7 @@ import card5 from '../../assets/card5.webp';
 ---
 
 <section class='services-section'>
-  <div class="headers-wrapper">
+  <div class='headers-wrapper'>
     <h2 class='services-heading'>Usługi</h2>
     <h3 class='services-subheading'>
       Kompleksowe wsparcie rozwoju twojego dziecka
@@ -18,22 +18,34 @@ import card5 from '../../assets/card5.webp';
     <div class='card-box'>
       <Image class='card-image' src={card6} alt='kid playing with toys' />
       <h3>Diagnoza Logopedyczna</h3>
-      <a href="/services#service1">Zobacz więcej</a>
+      <a
+        aria-label='link to detailed info about services'
+        href='/services#service1'>Zobacz więcej</a
+      >
     </div>
     <div class='card-box'>
       <Image class='card-image' src={card3} alt='kid playing with toys' />
       <h3>Terapia Logopedyczna</h3>
-      <a href="/services#service2">Zobacz więcej</a>
+      <a
+        aria-label='link to detailed info about services'
+        href='/services#service2'>Zobacz więcej</a
+      >
     </div>
     <div class='card-box'>
       <Image class='card-image' src={card5} alt='kid playing with toys' />
       <h3>Terapia Pedagogiczna</h3>
-      <a href="/services#service3">Zobacz więcej</a>
+      <a
+        aria-label='link to detailed info about services'
+        href='/services#service3'>Zobacz więcej</a
+      >
     </div>
     <div class='card-box'>
       <Image class='card-image' src={card} alt='kid playing with toys' />
       <h3>Terapia Ręki</h3>
-      <a href="/services#service4">Zobacz więcej</a>
+      <a
+        aria-label='link to detailed info about services'
+        href='/services#service4'>Zobacz więcej</a
+      >
     </div>
   </div>
 </section>
@@ -82,23 +94,22 @@ import card5 from '../../assets/card5.webp';
   .card-box h3 {
     padding: 40px 10px 10px 10px;
     font-family: var(--baloo-font);
-    font-size: clamp(1.3rem,1.4vw,1.6rem);
+    font-size: clamp(1.3rem, 1.4vw, 1.6rem);
     color: var(--text-blue);
   }
   .card-box a {
-    padding: 10px 20px 10px 20px;
+    padding: 15px 30px;
     font-family: var(--mulish-font);
     color: var(--wh);
     margin-inline: 10px;
     margin-bottom: 10px;
     border-radius: 6px;
-    transition: background-color .3s;
+    transition: background-color 0.3s;
     background-color: var(--rose-main);
     box-shadow: inset 0px -4px 0px 0px rgb(0 0 0 / 10%);
   }
   .card-box a:hover {
     background-color: var(--text-blue);
-    
   }
   .card-image {
     width: 100%;
@@ -108,13 +119,14 @@ import card5 from '../../assets/card5.webp';
   }
   @media (min-width: 900px) {
     .cards-wrapper {
-        padding-top: 40px;
-        max-width: 1440px;
-        margin: auto;
-        flex-direction: row;
+      padding-top: 40px;
+      max-width: 1440px;
+      margin: auto;
+      flex-direction: row;
     }
-    .services-heading, .services-subheading {
-        text-align: center;
+    .services-heading,
+    .services-subheading {
+      text-align: center;
     }
   }
 </style>
