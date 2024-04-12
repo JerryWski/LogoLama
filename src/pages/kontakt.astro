@@ -8,7 +8,7 @@ import HeadersLinks from "../components/SharedComponents/HeadersLinks";
 <Layout title='Logopeda i Pedagog dla dzieci - Olsztyn i okolice'>
     <section class='contact-header-container'>
         <div class='contact-header-wrapper'>
-          <h1 class='contact-heading'>Trochę o Mnie...</h1>
+          <h1 class='contact-heading'>Skontaktuj się ze mną</h1>
           <HeadersLinks
             href1='/'
             title1='Strona Główna'
@@ -17,15 +17,18 @@ import HeadersLinks from "../components/SharedComponents/HeadersLinks";
           />
         </div>
       </section>
+
+<section class="contact-section"></section>
+
 </Layout>
 
 <style>
     .contact-header-container {
     height: 300px;
     background-color: var(--rose-bg);
-    background-image: url('/services-bg2.webp');
+    background-image: url('/contact-bg3.webp');
     background-repeat: no-repeat;
-    background-position: right top;
+    background-position: -100px top;
     background-size: cover;
 
     display: flex;
@@ -39,7 +42,15 @@ import HeadersLinks from "../components/SharedComponents/HeadersLinks";
     padding-left: 30px;
     font-size: clamp(1.7rem, 3vw, 3.5rem);
   }
+  .contact-section {
+    height: 600px;
+  }
 @media (min-width: 900px) {
+  .contact-header-container {
+    background-position: right top;
+    background-image: url('/contact-bg3.webp');
+    background-size: contain;
+  }
     .contact-header-wrapper {
       padding-left: 230px;
     }
