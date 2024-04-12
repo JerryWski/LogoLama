@@ -1,36 +1,85 @@
-contact---
-import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
+---
+import { Image } from 'astro:assets';
+import woman from '../assets/contact-img.webp';
+import { Icon } from 'astro-icon/components';
 import Layout from '../layouts/Layout.astro';
-import HeadersLinks from "../components/SharedComponents/HeadersLinks";
+import HeadersLinks from '../components/SharedComponents/HeadersLinks';
 ---
 
 <Layout title='Logopeda i Pedagog dla dzieci - Olsztyn i okolice'>
-    <section class='contact-header-container'>
-        <div class='contact-header-wrapper'>
-          <h1 class='contact-heading'>Skontaktuj się ze mną</h1>
-          <HeadersLinks
-            href1='/'
-            title1='Strona Główna'
-            href2='/kontakt'
-            title2='Kontakt'
-          />
-        </div>
-      </section>
+  <section class='contact-header-container'>
+    <div class='contact-header-wrapper'>
+      <h1 class='contact-heading'>Skontaktuj się ze mną</h1>
+      <HeadersLinks
+        href1='/'
+        title1='Strona Główna'
+        href2='/kontakt'
+        title2='Kontakt'
+      />
+    </div>
+  </section>
 
-<section class="contact-section"></section>
+  <section class='contact-section'>
+    <div class='contact-wrapper'>
+      <span class='overheader'>Zajrzyj na moje social media</span>
+      <h1 class='contact-header'>Dane kontaktowe</h1>
+      <div class='contact-social-block'>
+        <a href='tel:+48668278485'>
+          <div class='link-phone'>
+            <Icon class='icon' name='phone2' width={20} height={20} />
+          </div>
+          <span>+48 668 278 485</span>
+        </a>
 
+        <a href='mailto:logolama1@wp.pl'>
+          <div class='link-mail'>
+            <Icon name='mail2' width={20} height={20} />
+          </div>
+          <span>logolama1@wp.pl</span>
+        </a>
+
+        <a href='https://www.facebook.com/search/top/?q=logolama'>
+          <div class='link-facebook'>
+            <Icon name='face' width={20} height={20} />
+          </div>
+          <span>LogoLama</span>
+        </a>
+      </div>
+      <div class='contact-address'>
+        <h3>Adres do korespondencji</h3>
+        <strong>
+          <p>LogoLama - Paulina Kopaczewska-Rudaś</p>
+        </strong>
+        <p>10-376 Nikielkowo</p>
+        <p>ul. Flaminga 28</p>
+      </div>
+      <p class='contact-text'>
+        Terapie prowadzę głównie w domu pacjenta - dojeżdżam do dzieci w
+        Olsztynie, Dywitach, Barczewie oraz miejscowościach okolicznych.
+      </p>
+    </div>
+
+    <div class='image-wrapper'>
+      <Image class='contact-img' src={woman} alt='woman-talking-by-phone' />
+    </div>
+  </section>
 </Layout>
 
 <style>
-    .contact-header-container {
+  .image-wrapper {
+    max-width: 600px;
+  }
+  .contact-img {
+    width: 100%;
+    height: auto;
+  }
+  .contact-header-container {
     height: 300px;
     background-color: var(--rose-bg);
-    background-image: url('/contact-bg3.webp');
+    background-image: url('/contact-bg.webp');
     background-repeat: no-repeat;
     background-position: -100px top;
     background-size: cover;
-
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -40,19 +89,107 @@ import HeadersLinks from "../components/SharedComponents/HeadersLinks";
     font-family: var(--baloo-font);
     color: var(--text-blue);
     padding-left: 30px;
-    font-size: clamp(1.7rem, 3vw, 3.5rem);
+    font-size: clamp(2rem, 3vw, 3.5rem);
+  }
+  .overheader {
+    font-family: var(--mulish-font);
+    font-weight: 800;
+    letter-spacing: 1px;
+    line-height: 20px;
+    font-size: 0.9rem;
+    color: var(--rose-main);
+  }
+  .contact-header {
+    font-family: var(--baloo-font);
+    color: var(--text-blue);
+    margin-bottom: 20px;
+    font-size: clamp(2rem, 3vw, 3.5rem);
   }
   .contact-section {
-    height: 600px;
+    padding-inline: 30px;
+    padding-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    row-gap: 60px;
+    padding-bottom: 180px;
   }
-@media (min-width: 900px) {
-  .contact-header-container {
-    background-position: right top;
-    background-image: url('/contact-bg3.webp');
-    background-size: contain;
+  .contact-social-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
   }
+  .link-phone,
+  .link-mail,
+  .link-facebook {
+    background-color: var(--sea-blue);
+    font-size: 22px;
+    margin-right: 20px;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    color: var(--wh);
+    line-height: 70px;
+    text-align: center;
+    border-radius: 100px;
+    box-shadow: inset 0px -4px 0px 0px rgb(0 0 0 / 10%);
+  }
+  .link-phone {
+    background-color: var(--rose-main);
+  }
+  .link-mail {
+    background-color: #fcd380;
+  }
+  span:not([class]) {
+    color: var(--text-blue);
+    font-family: var(--baloo-font);
+    font-size: 1.4rem;
+  }
+  span:not([class]):hover {
+    opacity: 0.8;
+  }
+  .contact-address {
+    margin-block: 30px;
+    font-family: var(--mulish-font);
+    font-size: 1rem;
+    line-height: 30px;
+  }
+  .contact-address h3 {
+    font-size: 1.2rem;
+  }
+  .contact-address > strong:nth-child(2) > p:nth-child(1) {
+    margin-block: 5px;
+  }
+  p:not([class]) {
+    color: var(--rose-main);
+  }
+  .contact-text {
+    color: var(--text-blue);
+    font-family: var(--baloo-font);
+    font-size: 1.2rem;
+    border-left: 4px solid var(--text-blue);
+    
+
+    padding-left: 20px;
+  }
+  @media (min-width: 900px) {
+    .contact-header-container {
+      background-position: right top;
+      background-image: url('/contact-bg4.webp');
+      background-size: contain;
+    }
     .contact-header-wrapper {
       padding-left: 230px;
     }
-}
+    .contact-section {
+      padding-inline: 200px;
+      padding-bottom: 230px;
+      column-gap: 50px;
+    }
+    .contact-wrapper {
+      max-width: 50%;
+    }
+  }
 </style>
