@@ -7,7 +7,7 @@ import logo from '../../assets/logo-test2.webp';
 <section class='contact-section'>
   <div class='contact-wrapper'>
     <div class='first-column'>
-      <Image class='contact-logo' src={logo} alt='logo-image' />
+      <Image class='contact-logo' src={logo} alt='logo-with-lama-pointing-to-brand-name' loading='eager' />
       <p>
         LogoLama to cała ja – Paulina Kopaczewska-Rudaś – nauczycielka i
         logopedka. Logopedia to moja pasja, spełniam się pracując z dziećmi i
@@ -18,13 +18,13 @@ import logo from '../../assets/logo-test2.webp';
     <div class='second-column'>
       <h2>Kontakt</h2>
       <div>
-        <a class='link-phone' href='tel:+48668278485'
+        <a aria-label="link to phone number" class='link-phone' href='tel:+48668278485'
           ><Icon class='icon' name='phone2' width={20} height={20} /></a
         >
-        <a class='link-mail' href='mailto:logolama1@wp.pl'
+        <a aria-label="link to email address" class='link-mail' href='mailto:logolama1@wp.pl'
           ><Icon name='mail2' width={20} height={20} /></a
         >
-        <a
+        <a aria-label="link to facebook site"
           class='link-facebook'
           href='https://www.facebook.com/search/top/?q=logolama'
           ><Icon name='face' width={20} height={20} /></a
@@ -34,7 +34,7 @@ import logo from '../../assets/logo-test2.webp';
     <div class='third-column'>
       <h3>Na skróty:</h3>
       <ul class='contact-list'>
-        <li><a aria-label='link to main page' href='#'>Strona Główna</a></li>
+        <li><a aria-label='link to main page' href='/'>Strona Główna</a></li>
         <li><a aria-label='link to about me subpage' href='/o-mnie'>O mnie</a></li>
         <li><a aria-label='link to services' href='/uslugi'>Usługi</a></li>
         <!-- <li><a aria-label='link to privacy policy' href='/'>Polityka Prywatności</a></li> -->
