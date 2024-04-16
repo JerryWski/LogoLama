@@ -15,7 +15,7 @@ const FooterSection: React.FC = () => {
             className='footer_link'
             href='https://jerrywski.github.io/Portfolio-Site/'
           >
-            Jerry_Wski.
+            Jerry_Wski
           </a>
           &nbsp; Wszelkie prawa zastrzeżone
         </p>
