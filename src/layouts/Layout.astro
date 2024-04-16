@@ -16,7 +16,10 @@ const {
 <html lang='pl'>
   <head>
     <meta charset='UTF-8' />
-    <meta name='description' content='Astro description' />
+    <meta
+      name='description'
+      content='Logopeda i Pediatra Paulina Kopaczewska-Rudaś - Olsztyn. Terapie dla dzieci, terapia ręki, terapia mowy, zaburzenia i diagnozy, darmowa konsultacja'
+    />
     <meta name='viewport' content='width=device-width' />
     <link rel='icon' type='image/svg+xml' href='/logo-test2.svg' />
     <meta name='generator' content={Astro.generator} />
@@ -26,7 +29,7 @@ const {
     <Navbar />
     <slot />
     <ContactSection />
-    <FooterSection client:only/>
+    <FooterSection client:only />
   </body>
 </html>
 <style is:global>
@@ -44,7 +47,7 @@ const {
     /* colors */
     --rose-bg: #fdf5f2;
     --rose-main: #fc6e94;
-    --rose-logo: #EEAFC7;
+    --rose-logo: #eeafc7;
     --wh: hsl(0, 0%, 100%);
     --grey: #716b6b;
     --text-blue: #323662;
