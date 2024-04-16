@@ -19,14 +19,14 @@ import dices from '../assets/dices.webp';
       <HeadersLinks
         href1='/'
         title1='Strona Główna'
-        href2='/services'
+        href2='/uslugi'
         title2='Usługi'
       />
     </div>
   </section>
 
   <section class='offers-section'>
-    <div class='offers-wrapper'>
+    <div id='service1' class='offers-wrapper'>
       <div class='card one'>
         <Image class='card-image' src={offer1} alt='therapist teaching kid' />
         <div class='card-container'>
@@ -46,9 +46,9 @@ import dices from '../assets/dices.webp';
 
       <div class='text'>
         <Image class='sun-icon' src={sun} alt='cartoon-sun' />
-        <h3 id='service1'>Co to jest - diagnoza logopedyczna?</h3>
+        <h3 >Co to jest - diagnoza logopedyczna?</h3>
         <p class='text-long-description'>
-          Diagnoza logopedyczna to zbiór zasad i metod badania, który ma na celu
+          Diagnoza logopedyczna to zbiór zasad i metod badania. Ma na celu
           ocenę rozwoju oraz stanu mowy, jak też dookreślenie nieprawidłowości
           występujących w procesie komunikacji językowej. Postępowanie
           diagnostyczne najczęściej składa się z rozpoznania zaburzenia,
@@ -66,7 +66,7 @@ import dices from '../assets/dices.webp';
       </div>
     </div>
 
-    <div class='offers-wrapper'>
+    <div id='service2' class='offers-wrapper'>
       <div class='card two'>
         <Image class='card-image' src={offer2} alt='therapist teaching kid' />
         <div class='card-container'>
@@ -84,7 +84,7 @@ import dices from '../assets/dices.webp';
 
       <div class='text'>
         <Image class='dices-icon' src={dices} alt='cartoon-dices' />
-        <h3 id='service2'>Na czym polega terapia logopedyczna?</h3>
+        <h3 >Na czym polega terapia logopedyczna?</h3>
         <p class='text-long-description'>
           Całość specyficznych, zamierzonych oddziaływań naprawczych,
           ukierunkowanych na usunięcie patologicznych zjawisk logopedycznych
@@ -100,14 +100,12 @@ import dices from '../assets/dices.webp';
           szczególnie w trakcie stymulowania rozwoju mowy przy jego opóźnieniu.
           Terapia jest pracą: logopedy, dziecka i jego rodziców. Terapeuta
           dokłada wszelkich starań, aby dziecko było zainteresowane wykonywanymi
-          zadaniami i chętnie reagowało na polecenia. Zdarza się, że zadania się
-          powtarzają pod przykrywką innego działania, szczególnie w terapii wad
-          wymowy.
+          zadaniami i chętnie reagowało na polecenia.
         </p>
       </div>
     </div>
 
-    <div class='offers-wrapper'>
+    <div id='service3' class='offers-wrapper'>
       <div class='card three'>
         <Image class='card-image' src={offer3} alt='therapist teaching kid' />
         <div class='card-container'>
@@ -124,12 +122,11 @@ import dices from '../assets/dices.webp';
 
       <div class='text'>
         <Image class='stars-icon' src={stars} alt='cartoon-stars' />
-        <h3 id='service3'>Terapia Pedagogiczna - terminologia</h3>
+        <h3 >Terapia Pedagogiczna</h3>
         <p class='text-long-description'>
           Terapia pedagogiczna to całokształt działań o charakterze
           korekcyjno-kompensacyjnym. Polega na usprawnianiu zaburzonych funkcji
-          oraz doskonaleniu tych, które są dobrze rozwinięte. Wszystko to odbywa
-          się pod “skrzydłami” terapeuty.
+          oraz doskonaleniu tych, które są dobrze rozwinięte.
         </p>
         <h3>Cel terapii pedagogicznej</h3>
         <p class='text-long-description'>
@@ -144,7 +141,7 @@ import dices from '../assets/dices.webp';
       </div>
     </div>
 
-    <div class='offers-wrapper'>
+    <div id='service4' class='offers-wrapper'>
       <div class='card four'>
         <Image class='card-image' src={offer4} alt='therapist teaching kid' />
         <div class='card-container'>
@@ -160,7 +157,7 @@ import dices from '../assets/dices.webp';
       </div>
 
       <div class='text'>
-        <h3 id='service4'>W czym pomaga terapia ręki?</h3>
+        <h3 >W czym pomaga terapia ręki?</h3>
         <p class='text-long-description'>
           Terapia ręki skupia się na poprawie funkcjonowania całej kończyny
           górnej, począwszy od barku, przez ramię, przedramię, aż po nadgarstek,
@@ -168,14 +165,6 @@ import dices from '../assets/dices.webp';
           wykonywania dokładnych ruchów dłoni i palców. Aby osiągnąć wysoki
           poziom zręczności w wykonywaniu precyzyjnych czynności, konieczna jest
           poprawna kondycja i sprawność całej ręki.
-        </p>
-        <h3>Kto może być terapeutą ręki</h3>
-        <p class='text-long-description'>
-          Terapię ręki może prowadzić osoba, która ukończyła kurs terapii ręki.
-          Kursy przeznaczone są przede wszystkim dla nauczycieli, logopedów,
-          pedagogów, psychologów i innych terapeutów. Mogą jednak skorzystać z
-          nich wychowawcy, pedagodzy specjalni, nauczyciele wspomagający i inni
-          specjaliści pracujący z dziećmi, a także rodzice.
         </p>
       </div>
     </div>
@@ -259,6 +248,7 @@ import dices from '../assets/dices.webp';
   .four {
     border-bottom: 3px solid var(--text-blue2);
   }
+
   .card-container {
     display: flex;
     flex-direction: column;
@@ -309,7 +299,7 @@ import dices from '../assets/dices.webp';
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 15px;
-    padding: 15px 25px;
+    padding: 15px 10px;
     width: fit-content;
     font-family: var(--mulish-font);
     color: var(--wh);
@@ -363,8 +353,11 @@ import dices from '../assets/dices.webp';
       order: 2;
     }
     .card {
-      width: 40%;
+      width: 35%;
       order: 1;
+    }
+    .card.four {
+      width: 30%;
     }
     .text {
       width: 40%;
