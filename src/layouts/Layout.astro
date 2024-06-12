@@ -3,6 +3,7 @@ import ContactSection from '../components/ContactSection/ContactSection.astro';
 import FooterSection from '../components/FooterSection/FooterSection';
 import Navbar from '../components/Navbar/Navbar.astro';
 import '../utils/CustomFonts.css';
+
 interface Props {
   title: string;
 }
@@ -25,6 +26,7 @@ const {
     <meta name='generator' content={Astro.generator} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <title>{title}</title>
+    <!-- <ViewTransitions fallback="none" /> -->
   </head>
   <body>
     <Navbar />
@@ -34,6 +36,9 @@ const {
   </body>
 </html>
 <style is:global>
+  @view-transition {
+    navigation: auto; /* enabled! */
+  }
   *,
   *::after,
   *::before {

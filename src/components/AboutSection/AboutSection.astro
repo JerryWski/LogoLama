@@ -2,6 +2,7 @@
 import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
 import supermom from '../../assets/supermon2-2.webp';
+
 ---
 
 <section class='about-section'>
@@ -42,6 +43,9 @@ import supermom from '../../assets/supermon2-2.webp';
 </section>
 
 <style>
+  @view-transition {
+    navigation: auto; /* enabled! */
+  }
   .about-section {
     padding-top: 130px;
     padding-bottom: 130px;
